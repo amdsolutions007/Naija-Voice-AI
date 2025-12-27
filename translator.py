@@ -28,13 +28,13 @@ class NaijaVoiceTranslator:
         Args:
             api_key: Google Gemini API key (reads from env if not provided)
         """
-        # AMD-Master-Brain API KEY (v0.1.0 - hardcoded for testing)
-        self.api_key = api_key or os.environ.get('GEMINI_API_KEY') or 'AIzaSyDDqzn4iFuusghWwwzZ_RZQyG2BsO3rP-s'
+        # Read API key from environment variable or constructor parameter
+        self.api_key = api_key or os.environ.get('GEMINI_API_KEY')
         
         if not self.api_key:
             raise ValueError(
                 "❌ GEMINI_API_KEY not found. "
-                "Provide via constructor or set environment variable."
+                "Provide via constructor or set environment variable: export GEMINI_API_KEY='your-key-here'"
             )
         
         # Configure Gemini
