@@ -40,10 +40,10 @@ class NaijaVoiceTranslator:
         # Configure Gemini
         genai.configure(api_key=self.api_key)
         
-        # Use Gemini Pro model
-        self.model = genai.GenerativeModel('gemini-pro')
+        # Use Gemini 2.0 Flash model (latest stable)
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
         
-        print("✅ Naija-Voice-AI initialized with Gemini Pro")
+        print("✅ Naija-Voice-AI initialized with Gemini 2.0 Flash")
     
     def translate_to_pidgin(self, text: str) -> str:
         """
